@@ -26,11 +26,25 @@ namespace HW_09_05
             var sum = (from p in num
                        where p < 0
                        select p).Sum();
-            sum = sum * -1;
-            Console.WriteLine(countNum + " "+sum);
+            int[] sumNum = { countNum, sum };
+            foreach (var item in sumNum)
+            {
+                Console.Write(item+" ");
+            }
+            Console.WriteLine();
 
 
-    Console.ReadKey();
+            string[] str = { "Telescopes", "Glasses", "Eyes", "Monocles" };
+
+            var s = (from p in str
+                     orderby p.Length
+                     select p);
+            foreach (var item in s)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadKey();
 
         }
         
