@@ -44,6 +44,15 @@ namespace HW_09_05
                 Console.WriteLine(item);
             }
 
+            int[] u = { 1, 1, 1, 3, 1, 1 };
+            var Un = (from p in u
+                      select p).Distinct();
+            foreach (var item in Un)
+            {
+                if (item == 1) continue;
+                Console.WriteLine(item);
+            }
+
             Console.ReadKey();
 
         }
