@@ -45,11 +45,9 @@ namespace HW_09_05
             }
 
             int[] u = { 1, 1, 1, 3, 1, 1 };
-            var Un = (from p in u
-                      select p).Distinct();
+            var Un = u.GroupBy(z => z).Where(z => z.ToList().Count == 1).Select(z => z.Key);
             foreach (var item in Un)
             {
-                if (item == 1) continue;
                 Console.WriteLine(item);
             }
 
